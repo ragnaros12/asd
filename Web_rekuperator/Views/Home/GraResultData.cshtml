@@ -1,0 +1,88 @@
+﻿
+@{ ViewData["Title"] = "График"; }
+
+<style>
+    body{
+        background-image: url(/img/Group-5.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
+
+<div class="text-center">
+    <h7 class="display-4"><b>График зависимости Количество продуктов горения перед рекуператором от Расхода топлива на печь</b></h7>
+
+</div>
+
+<canvas id="myChart" width="300" height="150"></canvas>
+
+<script>
+    var ctx = document.getElementById('myChart');
+
+    // Global Options:
+    Chart.defaults.global.defaultFontColor = 'black';
+    Chart.defaults.global.defaultFontSize = 16;
+
+    var data = {
+        labels: @Json.Serialize(ViewBag.x),
+        datasets: [{
+            label: "",
+            fill: false,
+            lineTension: 0.1,
+            backgroundColor: "rgba(225,225,225,100%)", 
+            borderColor: "blue", // The main line color
+            borderCapStyle: 'square',
+            borderDash: [], // try [5, 15] for instance
+            borderDashOffset: 0.0,
+            borderJoinStyle: 'miter',
+            pointBorderColor: "black",
+            pointBackgroundColor: "blue",
+            pointBorderWidth: 1,
+            pointHoverRadius: 8,
+            pointHoverBackgroundColor: "black",
+            pointHoverBorderColor: "black",
+            pointHoverBorderWidth: 2,
+            pointRadius: 4,
+            pointHitRadius: 10,
+            // notice the gap in the data and the spanGaps: true
+            data:@Json.Serialize(ViewBag.y),
+            spanGaps: true,
+        }
+
+        ]
+    };
+
+    // Notice the scaleLabel at the same level as Ticks
+    var options = {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                },
+                scaleLabel: {
+                    display: true,
+                    labelString:'Количество продуктов горения перед рекуператором',
+                    fontSize: 20
+                }
+            }],
+
+            xAxes: [{
+                ticks: {
+                    beginAtZero: true
+                },
+                scaleLabel: {
+                    display: true,
+                    labelString: 'Расход топлива на печь',
+                    fontSize: 20
+                }
+            }]
+        }
+    };
+
+    // Chart declaration:
+    var myBarChart = new Chart(ctx, {
+        type: 'line',
+        data: data,
+        options: options
+    });
+</script>

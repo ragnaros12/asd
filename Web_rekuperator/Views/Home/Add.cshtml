@@ -1,0 +1,168 @@
+﻿@model Web_proekt.Models.Model
+
+@{
+    ViewData["Title"] = "View";
+}
+
+<h1>View</h1>
+
+<h4>Model</h4>
+<hr />
+<div class="row">
+    <tr class="col-md-4">
+        <form asp-action="Add" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <table border="1" class="table table-bordered" align="center" valign="bottom" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
+                 <thead>
+                    <tr bgcolor="#343a40" style="color:white" >
+                        <th><h4>Название</h4></th>
+                        <th><h4>Значение</h4></th>
+                        <th><h4>Измерение</h4></th>
+                    </tr>
+                    <tr class="form-group">
+                        <td><label asp-for="B" class="control-label"></label></td>
+                        <td><input asp-for="B" type="number" value="9.335" class="form-control" /></td>
+                        <td><label class="text-danger">м</label></td>
+                    </tr>
+                    <tr class="form-group">
+                        <td><label asp-for="ALFA" class="control-label"></label></td>
+                        <td><input asp-for="ALFA" type="number" value="1.05" class="form-control" /></td>
+                        <td><label class="text-danger">м</label></td>
+                    </tr>
+                    <tr class="form-group">
+                        <td><label asp-for="LALFA" class="control-label"></label></td>
+                        <td><input asp-for="LALFA" type="number" value="1.54" class="form-control" /></td>
+                        <td>м<sup><small>3</small></sup>/м<sup><small>3</small></sup></td>
+                    </tr>
+                    <tr class="form-group">
+                        <td><label asp-for="VALFA" class="control-label"></label></td>
+                        <td><input asp-for="VALFA" type="number" value="2.37" class="form-control" /></td>
+                        <td>м<sup><small>3</small></sup>/м<sup><small>3</small></sup></td>
+                    </tr>
+                    <tr class="form-group">
+                        <td><label asp-for="VL" class="control-label"></label></td>
+                        <td><input asp-for="VL" value="3" type="number" class="form-control" /></td>
+                        <td>%</td>
+                    </tr>
+                    <tr class="form-group">
+                        <td><label asp-for="TRO" class="control-label"></label></td>
+                        <td><input asp-for="TRO" type="number" value="1070" class="form-control" /></td>
+                        <td><sup><small>0</small></sup>C</td>
+                    </tr>
+                    <tr class="form-group">
+                        <td><label asp-for="BETTAT" class="control-label"></label></td>
+                        <td><input asp-for="BETTAT" type="number" value="1" class="form-control" /></td>
+                        <td></td>
+                    </tr>
+                    <tr class="form-group">
+                        <td><label asp-for="CV1" class="control-label"></label></td>
+                        <td><input asp-for="CV1" type="number" value="1.29" class="form-control" /></td>
+                        <td><sup><small>0</small></sup>C</td>
+                    </tr>
+                    <tr class="form-group">
+                        <td><label asp-for="TV1" class="control-label"></label></td>
+                        <td><input asp-for="TV1" type="number" value="20" class="form-control" /></td>
+                        <td>кДж/м<sup><small>3</small></sup></td>
+                    </tr>
+                    <tr class="form-group">
+                        <td><label asp-for="CV2"  class="control-label"></label></td>
+                        <td><input asp-for="CV2" value="1.34" type="number" class="form-control" /></td>
+                        <td><sup><small>0</small></sup>C</td>
+                    </tr>
+                    <tr class="form-group">
+                        <td><label asp-for="TV2" class="control-label"></label></td>
+                        <td><input asp-for="TV2" type="number" value="500" class="form-control" /></td>
+                        <td></td>
+                    </tr>
+                    <tr class="form-group">
+                        <td><label asp-for="ETA" class="control-label"></label></td>
+                        <td><input asp-for="ETA" type="number" value="0.9" class="form-control" /></td>
+                        <td><sup><small>0</small></sup>C</td>
+                    </tr>
+                    <tr class="form-group">
+                        <td><label asp-for="TD1" class="control-label"></label></td>
+                        <td><input asp-for="TD1" type="number" value="1070" class="form-control" /></td>
+                        <td><sup><small>0</small></sup>C</td>
+                    </tr>
+                    <tr class="form-group">
+                        <td><label asp-for="TD2" class="control-label"></label></td>
+                        <td><input asp-for="TD2" type="number" value="765" class="form-control" /></td>
+                        <td><sup><small>0</small></sup>C</td>
+                    </tr>
+                    <tr class="form-group">
+                        <td><label asp-for="KSIDELTAT" class="control-label"></label></td>
+                        <td><input asp-for="KSIDELTAT" value="0.98" type="number" class="form-control" /></td>
+                        <td>шт.</td>
+                    </tr>
+                    <tr class="form-group">
+                        <td><label asp-for="Z1" class="control-label"></label></td>
+                        <td><input asp-for="Z1" value="24" type="number" class="form-control" /></td>
+                        <td>шт.</td>
+                    </tr>
+                    <tr class="form-group">
+                        <td><label asp-for="Z2" class="control-label"></label></td>
+                        <td><input asp-for="Z2" value="20" type="number" class="form-control" /></td>
+                        <td>шт.</td>
+                    </tr>
+                    <tr class="form-group">
+                        <td><label asp-for="Z3" class="control-label"></label></td>
+                        <td><input asp-for="Z3"  value="30" type="number" class="form-control" /></td>
+                        <td>шт.</td>
+                    </tr>
+                    <tr class="form-group">
+                        <td><label asp-for="ETAD" class="control-label"></label></td>
+                        <td><input asp-for="ETAD" value="2" type="number" class="form-control" /></td>
+                        <td>шт.</td>
+                    </tr>
+                    <tr class="form-group">
+                        <td><label asp-for="ETAV" class="control-label"></label></td>
+                        <td><input asp-for="ETAV" value="1" type="number" class="form-control" /></td>
+                        <td>шт.</td>
+                    </tr>
+                    <tr class="form-group">
+                        <td><label asp-for="DDDK" class="control-label"></label></td>
+                        <td><input asp-for="DDDK" value="0.158" type="number" class="form-control" /></td>
+                        <td>м</td>
+                    </tr>
+                    <tr class="form-group">
+                        <td><label asp-for="ALFADL" class="control-label"></label></td>
+                        <td><input asp-for="ALFADL" value="23" type="number" class="form-control" /></td>
+                        <td>Вт/м<sup><small>3</small></sup></td>
+                    </tr>
+                    <tr class="form-group">
+                        <td><label asp-for="KT" class="control-label"></label></td>
+                        <td><input asp-for="KT" value="0.91" type="number" class="form-control" /></td>
+                        <td></td>
+                    </tr>
+                    <tr class="form-group">
+                        <td><label asp-for="DDVK" class="control-label"></label></td>
+                        <td><input asp-for="DDVK" value="0.0565" type="number" class="form-control" /></td>
+                        <td>м</td>
+                    </tr>
+                    <tr class="form-group">
+                        <td><label asp-for="S" class="control-label"></label></td>
+                        <td><input asp-for="S" value="0.02" type="number" class="form-control" /></td>
+                        <td>м</td>
+                    </tr>
+                    <tr class="form-group">
+                        <td><label asp-for="FIBL" class="control-label"></label></td>
+                        <td><input asp-for="FIBL" value="0.161" type="number" class="form-control" /></td>
+                        <td>м</td>
+                    </tr>
+                    
+                </thead>
+            </table>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,159 @@
+﻿@model ReportResultModel
+@{
+    ViewData["Title"] = "Отчет";
+}
+
+    <div class="text-center">
+        <h1 class="display-4"><b>Отчет</b></h1>
+        <table border="1">
+
+
+            <tr>
+                <td bgcolor="#ffcc00"><h3>Название</h3></td>
+                <td bgcolor="#ffcc00"><h3>Значение</h3></td>
+                <td bgcolor="#ffcc00"><h3>Измерение</h3></td>
+            </tr>
+            <tr>
+                <td>Количество воздухапоступающее в рекуператор</td>
+                <td>@Model.Teplo_VB1</td>
+                <td>м<sup><small>3</small></sup>/с</td>
+            </tr>
+            <tr>
+                <td>Количество прососанного в рекуператор воздуха</td>
+                <td>@Model.VBPR</td>
+                <td>м<sup><small>3</small></sup>/с</td>
+            </tr>
+            <tr>
+                <td>Количетво продуктов горения перед рекуператором</td>
+                <td> @Model.VD1</td>
+                <td>м<sup><small>3</small></sup>/с</td>
+            </tr>
+            <tr>
+                <td>Теплосодержание дыма перед рекуператором</td>
+                <td>@Model.ID1</td>
+                <td>кДж/м<sup><small>3</small></sup></td>
+            </tr>
+            <tr>
+                <td>Теплосодержание воздуха до рекуператора</td>
+                <td>@Model.IV1</td>
+                <td>кДж/м<sup><small>3</small></sup></td>
+            </tr>
+            <tr>
+                <td>Теплосодержание воздуха после рекуператора</td>
+                <td> @Model.IV2</td>
+                <td>кДж/м<sup><small>3</small></sup></td>
+            </tr>
+            <tr>
+                <td>Теплосодержание дыма за рекуператором</td>
+                <td>@Model.ID2</td>
+                <td>кДж/м<sup><small>3</small></sup></td>
+            </tr>
+            <tr>
+                <td>Средно логорифмический разность температур</td>
+                <td>@Model.DELTAT1</td>
+                <td><sup><small>0</small></sup>С</td>
+            </tr>
+            <tr>
+                <td>Результат P</td>
+                <td>@Model.P</td>
+                <td>м<sup><small>3</small></sup>/с</td>
+            </tr>
+            <tr>
+                <td>Результат P</td>
+                <td>@Model.R</td>
+                <td>м<sup><small>3</small></sup>/с</td>
+            </tr>
+            <tr>
+                <td>Действительная средне логорифмическая разность температур</td>
+                <td>@Model.DELTAT</td>
+                <td><sup><small>0</small></sup>С</td>
+            </tr>
+            <tr>
+                <td>Общое число блоков</td>
+                <td>@Model.ZCUMMA</td>
+                <td>шт.</td>
+            </tr>
+            <tr>
+                <td>Скорость дыма в рекуператоре</td>
+                <td> @Model.WOD</td>
+                <td>м/с</td>
+            </tr>
+            <tr>
+                <td>Скорость воздуха в рекуператоре</td>
+                <td>@Model.WOV</td>
+                <td>м/с</td>
+            </tr>
+            <tr>
+                <td>Cредняя температура дыма в рекуператоре</td>
+                <td>@Model.TD</td>
+                <td><sup><small>0</small></sup>С</td>
+            </tr>
+            <tr>
+                <td>Коэффицент конвективного теплообмена</td>
+                <td>@Model.ALFADK</td>
+                <td>Вт/м<sup><small>2</small></sup>*град.</td>
+            </tr>
+            <tr>
+                <td>Коэффицент истегного значения</td>
+                <td>@Model.ALFADL</td>
+                <td>Вт/м<sup><small>2</small></sup>*град.</td>
+            </tr>
+            <tr>
+                <td>Средняя температура воздуха в рекуператоре</td>
+                <td>@Model.TV</td>
+                <td><sup><small>0</small></sup>С</td>
+            </tr>
+            <tr>
+                <td>Средняя температура стенки</td>
+                <td>@Model.TCT</td>
+                <td><sup><small>0</small></sup>С</td>
+            </tr>
+            <tr>
+                <td>Средняя температура воздуха в пограничном слое</td>
+                <td>@Model.TVPG1</td>
+                <td><sup><small>0</small></sup>С</td>
+            </tr>
+            <tr>
+                <td>Температурный напор</td>
+                <td>@Model.DELTATNAP</td>
+                <td><sup><small>0</small></sup>С</td>
+            </tr>
+            <tr>
+                <td>Коэффицент теплоотдачи от стенки к воздуху</td>
+                <td>@Model.ALFAV</td>
+                <td>Вт/м<sup><small>2</small></sup>*град.</td>
+            </tr>
+            <tr>
+                <td>Коэффицент теплопроводности материала</td>
+                <td>@Model.lSH</td>
+                <td>Вт/м<sup><small>2</small></sup>*град.</td>
+            </tr>
+            <tr>
+                <td>Коэффицент теплоотдачи от дыма к стенки рекуператора </td>
+                <td>@Model.ALFAD</td>
+                <td>Вт/м<sup><small>2</small></sup>*град.</td>
+            </tr>
+
+            <tr>
+                <td>Коэффицент теплоотдачи в рекуператоре</td>
+                <td> @Model.K</td>
+                <td>Вт/м<sup><small>2</small></sup>*град.</td>
+            </tr>
+            <tr>
+                <td>Количество теплоты передоваемая воздуху в рекуператоре </td>
+                <td> @Model.QV</td>
+                <td>Вт</td>
+            </tr>
+            <tr>
+                <td>Поверхность нагрева </td>
+                <td> @Model.F</td>
+                <td>м<sup><small>2</small></sup></td>
+            </tr>
+            <tr>
+                <td>Поверхность рекуператора  </td>
+                <td> @Model.F1</td>
+                <td>м<sup><small>2</small></sup></td>
+            </tr>
+        </table>
+    </div>
+    

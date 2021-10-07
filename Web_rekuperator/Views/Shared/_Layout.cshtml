@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Rekuperator</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/Chart.bundle.min.js" asp-append-version="true"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <link rel="stylesheet" href="http://bootstraptema.ru/plugins/2016/b-pdf-viewer/bootstrap-pdf-viewer.css" />
+    <link rel="stylesheet" href="http://bootstraptema.ru/plugins/2016/b-pdf-viewer/bootstrap-pdf-form-viewer.css" />
+    <link rel="stylesheet" href="http://bootstraptema.ru/plugins/2016/b-pdf-viewer/bootstrap-pdf-form-builder.css" />
+    <script src="http://bootstraptema.ru/plugins/2016/b-pdf-viewer/bootstrap-pdf-viewer.js"></script>
+    <script src="http://bootstraptema.ru/plugins/2016/b-pdf-viewer/bootstrap-pdf-form-viewer.js"></script>
+    <script src="http://bootstraptema.ru/plugins/2016/b-pdf-viewer/bootstrap-pdf-form-common.js"></script>
+    <script src="http://bootstraptema.ru/plugins/2016/b-pdf-viewer/bootstrap-pdf-form-builder.js"></script>
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md  navbar-dark bg-dark sticky-top">
+            <div class="container">
+                <a class="navbar-brad align-content-left" asp-area="" asp-controller="Home" asp-action="Index"> <img src="~/img/UrFULogo_U.png" /></a>
+
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto text-white text-right">
+                        <li class="nav-item active">
+                            <a class="nav-link" asp-controller="Home" asp-action="Index">В главный экран</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="https://drive.google.com/file/d/1wpmcqccY3AnZWAkeAhBan2Ldg9gSHVxm/preview" target="_blank">Рекуператор</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="https://drive.google.com/file/d/1ntealL0760-Kliilib0PjvUmgAHX-agQ/view" target="_blank">Справка</a>
+                        </li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-white" asp-area="Identity" title="Manage">Привет @User.Identity.Name!</a>
+                            </li>
+                            <li class="nav-item">
+                                <form class="form-inline" asp-area="Identity" >
+                                    <button type="submit" asp-controller="Account" asp-action="Logout" class="nav-link btn btn-link text-white">Logout</button>
+                                </form>
+                            </li>
+ }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
+                            </li>
+                        }
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <hr />
+    <footer>
+        <div class="container">
+            &copy; 2020 - Расчет керамического рекуператора  <a asp-area="" asp-controller="Home" asp-action="Index">Главное меню</a>
+
+        </div>
+    </footer>
+
+    @RenderSection("Scripts", required: false)
+
+    <style>
+        .navbar-brad img {
+            height: 50px;
+            width: 50px;
+        }
+    </style>
+</body>
+</html>
