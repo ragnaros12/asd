@@ -74,7 +74,6 @@ namespace rekuperatorProekt.Controllers
                 user.models.Add(model);
                 _userContext.models.Add(model);
                 _userContext.SaveChanges();
-                return _userContext.models.Where(u => u.Equals(model)).First();
                 return RedirectToAction(nameof(Index), "Home");
             }
             return RedirectToAction(nameof(AccountController.Login), "Account");
@@ -86,8 +85,7 @@ namespace rekuperatorProekt.Controllers
         {
             Model data = _userContext.models.Where(u => u.id == id).First();
 
-            return data;
-
+            //return data;
             data.Calculate();
 
             ResultModel result = data.Rachet();
