@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using Web_rekuperator.Models;
@@ -26,6 +27,10 @@ namespace Web_rekuperator
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("en");
+            CultureInfo.DefaultThreadCurrentUICulture = new CultureInfo("en");
+
+
             string connection = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<UserContext>(options => options.UseSqlServer(connection));
 

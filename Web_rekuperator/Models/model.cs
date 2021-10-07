@@ -14,7 +14,7 @@ namespace Web_proekt.Models
         public int id { get; set; }
         //<---------------Обозначение переменных----------------->//
         [Display(Name = "Расход топлива на печь")]
-        public double B { get; set; }
+        public float B { get; set; }
 
         [Display(Name = "Коэффицент избыточного воздуха")]
         public double ALFA { get; set; }
